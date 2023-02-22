@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Login | CoreUI | {{ config('app.name') }}</title>
+    <title>Login | {{ config('app.name') }}</title>
     <meta name="description" content="CoreUI Template - InfyOm Laravel Generator">
     <meta name="keyword" content="CoreUI,Bootstrap,Admin,Template,InfyOm,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
     <!-- Bootstrap-->
@@ -29,7 +29,7 @@
                         <form method="post" action="{{ url('/login') }}">
                             @csrf
                             <h1>Login</h1>
-                            <p class="text-muted">Sign In to your account</p>
+                            <p class="text-muted">Iniciar sesión en su cuenta</p>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
@@ -62,9 +62,6 @@
                                     <button class="btn btn-primary px-4" type="submit">Login</button>
                                 </div>
                                 <div class="col-6 text-right">
-                                    <a class="btn btn-link px-0" href="{{ url('/password/reset') }}">
-                                        Forgot password?
-                                    </a>
                                 </div>
                             </div>
                         </form>
@@ -73,10 +70,9 @@
                 <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
                     <div class="card-body text-center">
                         <div>
-                            <h2>Sign up</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.</p>
-                                <a class="btn btn-primary active mt-3" href="{{ url('/register') }}">Register Now!</a>
+                            <h2>Inscribirse</h2>
+                            <p>Para realizar su denuncia debe inscribirse, sus datos seran nesesarios para pocesar su denuncia.</p>
+                                <a class="btn btn-primary active mt-3" href="{{ url('/register') }}">Registrar ya</a>
                         </div>
                     </div>
                 </div>

@@ -6,10 +6,13 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
-class User extends Authenticatable
+use Spatie\Permission\Traits\HasRoles;
+use OwenIt\Auditing\Contracts\Auditable;
+class User extends Authenticatable implements Auditable
 {
     use HasFactory, Notifiable;
+     use \OwenIt\Auditing\Auditable;
+       use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -20,6 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        
     ];
 
     /**
@@ -39,5 +43,14 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+    ];
+    public static $rules = [
+        'name' => 'required',
+        'email' => 'required|email',
+        'password' => 'required|min:8',
+    ];
+    public static $updateRules = [
+        'name' => 'required',
+        'email' => 'required|email',
     ];
 }

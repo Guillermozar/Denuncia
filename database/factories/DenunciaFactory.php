@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
+use App\Models\Denuncia;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class UserFactory extends Factory
+class DenunciaFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = User::class;
+    protected $model = Denuncia::class;
 
     /**
      * Define the model's default state.
@@ -22,10 +22,14 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->text,
-        'email' => $this->faker->text,
-        'password' => $this->faker->text,
-        'role' => $this->faker->word,
+            'fecha' => $this->faker->word,
+        'observacion' => $this->faker->text,
+        'descripcion' => $this->faker->text,
+        'long' => $this->faker->text,
+        'lat' => $this->faker->text,
+        'imagen' => $this->faker->text,
+        'estado' => $this->faker->text,
+        'tipo' => $this->faker->text,
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];
